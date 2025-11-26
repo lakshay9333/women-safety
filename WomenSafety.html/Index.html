@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Women Safety Website - Home</title>
+    <Link></Link>
+    <style>
+        body {
+            font-family: "Times New Roman", serif; 
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            height: 100vh; 
+            width: 100vw; 
+            background-color: #87CEEB; 
+            margin: 0;
+        }
+        .header {
+            width: 100%;
+            background-color: #007bff; 
+            color: white; 
+            text-align: center;
+            padding: 20px 0;
+            border-bottom-left-radius: 50px; 
+            border-bottom-right-radius: 50px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+        }
+        h1 {
+            margin: 0; 
+            font-size: 2.5em; 
+        }
+        p {
+            margin-bottom: 20px;
+            text-align: center;
+            color: #003366; 
+        }
+        .navbar {
+            display: flex; 
+            justify-content: center; 
+            background-color: #0056b3; 
+            padding: 10px 0;
+            border-radius: 8px; 
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2); 
+            margin: 20px 0; 
+            width: 100%; 
+        }
+        .navbar button {
+            margin: 0 15px; 
+            padding: 12px 20px;  
+            font-size: 16px;  
+            border: none;
+            border-radius: 8px; 
+            cursor: pointer;
+            transition: background-color 0.3s, transform 0.3s;
+            background-color: #007bff; 
+            color: white; 
+        }
+        .navbar button:hover {
+            transform: scale(1.05); 
+            background-color: #0056b3; 
+        }
+        .image-container {
+            width: 100%; 
+            max-width: 600px; 
+            margin: 20px 0; 
+            overflow: hidden; 
+        }
+        .image-container img {
+            width: 100%; 
+            height: auto; 
+        }
+        .circle {
+            width: 20px; 
+            height: 20px; 
+            border-radius: 50%; 
+            background-color: red; 
+            margin-left: 10px; 
+            display: inline-block; 
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>Welcome to the Women's Safety Resource Center</h1>
+    </div>
+    
+    <p>Your safety is our priority. Here you can find essential safety tips, report incidents, and access emergency services.</p>
+
+    <div class="navbar">
+        <button onclick="window.location.href='safety-tips.html'">Show Safety Tips</button>
+        <button onclick="window.location.href='report-incident.html'">Report Incident</button>
+        <button onclick="window.location.href='report-fir.html'">Report FIR</button>
+        <button onclick="window.location.href='free-call.html'">Toll Free Number</button>
+        <button onclick="window.location.href='other-options.html'">Other</button>
+        <button id="helpButton" onclick="submitReport()">Help</button>
+        <span class="circle" id="statusCircle"></span> 
+    </div>
+
+    <div class="image-container">
+        <img id="safetyImage" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSPi-g83L8bBSgQp6raZ6pwJPD7P1-MGMuRNg&s" alt="Women's Safety Image">
+    </div>
+
+    <script>
+        const images = [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa_A1nYoNmd8Vit77Dfw6rIzs6ZTDPggrXqw&s', 
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTH8geYIgL-pXhkh8SYwjVTtdo_rtvvAkF60Q&s', 
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRdaBc5h1EHxZixNLCsC16QG1Tl9hnI2XooVw&s',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS-mPV7i_dxZuezLlcn-x5LLv8HzmYtIzz8YQ&s' 
+        ];
+
+        let currentIndex = 0;
+
+        function changeImage() {
+            currentIndex = (currentIndex + 1) % images.length; 
+            document.getElementById('safetyImage').src = images[currentIndex]; 
+        }
+
+        setInterval(changeImage, 2000); 
+
+        function submitReport() {
+            alert("Your report has been submitted.");
+            document.getElementById('helpButton').style.backgroundColor = "#28a745"; 
+            document.getElementById('statusCircle').style.backgroundColor = "green"; 
+        }
+    </script>
+
+</body>
+</html>
